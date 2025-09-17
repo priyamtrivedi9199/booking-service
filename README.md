@@ -41,9 +41,10 @@ Create project at Supabase
 Go to Authentication → Settings
 Copy JWT Secret and Project URL
 Create custom roles in your user metadata:
-```{
+{
      "role": "staff"
-}```
+}
+
 SendGrid Setup (Optional)
 
 Create account at SendGrid
