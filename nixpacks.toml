@@ -1,0 +1,8 @@
+[phases.build]
+cmds = ['./mvnw clean package -DskipTests']
+
+[phases.start]
+cmd = 'java -jar target/backend-1.0.0.jar'
+
+[variables]
+MAVEN_OPTS = '-Xmx1024m'
