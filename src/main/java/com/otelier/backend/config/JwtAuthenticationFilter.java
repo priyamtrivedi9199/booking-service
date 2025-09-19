@@ -46,12 +46,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             try {
                 SecretKey key = Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8));
                 
-                Claims claims = Jwts.parserBuilder()
-                    .setSigningKey(key)
+                Claims claims = Jwts.parser()
+                    .verifyWith(key)
                     .requireIssuer(jwtIssuer)
                     .build()
-                    .parseClaimsJws(token)
-                    .getBody();
+                    .parseSignedClaims(token)
+                    .getPayload();
                 
                 String userId = claims.getSubject();
                 String role = claims.get("role", String.class);

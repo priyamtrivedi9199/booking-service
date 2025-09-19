@@ -3,7 +3,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy maven files for dependency caching
-COPY ../../../../pom.xml .
+COPY ../../../../../../pom.xml .
 COPY .mvn .mvn
 COPY mvnw .
 
